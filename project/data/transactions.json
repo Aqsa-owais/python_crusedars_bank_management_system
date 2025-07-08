@@ -1,0 +1,38 @@
+{
+  "52fe8734-e2b6-4766-b031-daafdd512432": {
+    "transaction_id": "52fe8734-e2b6-4766-b031-daafdd512432",
+    "account_id": "a3e18845-c3ae-443b-9e54-e6ae3b37d9e0",
+    "transaction_type": "deposit",
+    "amount": 2000.0,
+    "description": "Initial deposit",
+    "target_account_id": null,
+    "created_at": "2025-07-08T22:13:38.716458",
+    "status": "completed",
+    "reference_number": "TXN278972",
+    "fee": 0.0
+  },
+  "59bd7581-6c57-49d7-b71a-d54befee84d5": {
+    "transaction_id": "59bd7581-6c57-49d7-b71a-d54befee84d5",
+    "account_id": "a3e18845-c3ae-443b-9e54-e6ae3b37d9e0",
+    "transaction_type": "deposit",
+    "amount": 100.0,
+    "description": "hello",
+    "target_account_id": null,
+    "created_at": "2025-07-08T22:15:05.171631",
+    "status": "completed",
+    "reference_number": "TXN251793",
+    "fee": 0.0
+  },
+  "4ce4e8ca-c152-48c8-bc00-b9b07d17dab9": {
+    "transaction_id": "4ce4e8ca-c152-48c8-bc00-b9b07d17dab9",
+    "account_id": "a3e18845-c3ae-443b-9e54-e6ae3b37d9e0",
+    "transaction_type": "withdrawal",
+    "amount": 100.0,
+    "description": "hi",
+    "target_account_id": null,
+    "created_at": "2025-07-08T22:15:37.488421",
+    "status": "completed",
+    "reference_number": "TXN668647",
+    "fee": 0.0
+  }
+}
