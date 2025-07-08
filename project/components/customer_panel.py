@@ -18,7 +18,7 @@ class CustomerPanel:
     
     def display(self):
         """Display customer panel"""
-        st.markdown('<div class="main-header">🏦 Customer Dashboard</div>', unsafe_allow_html=True)
+        st.markdown('<div class="main-header">Customer Dashboard</div>', unsafe_allow_html=True)
         
         # Sidebar menu
         with st.sidebar:

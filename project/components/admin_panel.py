@@ -20,7 +20,7 @@ class AdminPanel:
     
     def display(self):
         """Display admin panel"""
-        st.markdown('<div class="main-header">🏦 Admin Panel</div>', unsafe_allow_html=True)
+        st.markdown('<div class="main-header">Admin Panel</div>', unsafe_allow_html=True)
         
         # Sidebar menu
         with st.sidebar:

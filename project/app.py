@@ -29,7 +29,7 @@ st.set_page_config(
 st.markdown("""
 <style>
     .main-header {
-        background: linear-gradient(90deg, #1f77b4 0%, #2ca02c 100%);
+        background: #00cccc;
         padding: 1rem;
         border-radius: 10px;
         margin-bottom: 2rem;
@@ -74,7 +74,7 @@ st.markdown("""
     }
     
     .stButton > button {
-        background: linear-gradient(90deg, #1f77b4 0%, #2ca02c 100%);
+        background:#00cccc;
         color: white;
         border: none;
         border-radius: 5px;
@@ -123,7 +123,7 @@ def initialize_session_state():
 
 def login_page():
     """Display login page"""
-    st.markdown('<div class="main-header">🏦 Bank Management System</div>', unsafe_allow_html=True)
+    st.markdown('<div class="main-header">Bank Management System</div>', unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1, 2, 1])
     

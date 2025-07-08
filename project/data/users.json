@@ -42,5 +42,38 @@
     "created_at": "2025-07-08T22:13:03.251467",
     "last_login": "2025-07-08T22:13:15.201066",
     "is_active": true
+  },
+  "a9595f55-f976-4fd7-a7f7-67236d973c88": {
+    "user_id": "a9595f55-f976-4fd7-a7f7-67236d973c88",
+    "username": "Sobia",
+    "email": "sobia@gmail.com",
+    "phone": "03265858661",
+    "role": "customer",
+    "password_hash": "f1bd9db11aadbf87a42edfe628645075e98236eba86f36c89826a90828816d79",
+    "created_at": "2025-07-09T01:19:50.061850",
+    "last_login": "2025-07-09T01:20:24.486572",
+    "is_active": true
+  },
+  "61d0eab1-067d-428f-88c7-2aa7085b3417": {
+    "user_id": "61d0eab1-067d-428f-88c7-2aa7085b3417",
+    "username": "admin _bank",
+    "email": "admin@bankgmail.com",
+    "phone": "03129689057",
+    "role": "admin",
+    "password_hash": "ac9689e2272427085e35b9d3e3e8bed88cb3434828b43b86fc0596cad4c6e270",
+    "created_at": "2025-07-09T01:30:28.491173",
+    "last_login": null,
+    "is_active": true
+  },
+  "8ea59f06-af49-4135-ae02-a3b128e6b7b4": {
+    "user_id": "8ea59f06-af49-4135-ae02-a3b128e6b7b4",
+    "username": "final_admin",
+    "email": "admin@bankgmail.com",
+    "phone": "03129689057",
+    "role": "admin",
+    "password_hash": "41e5653fc7aeb894026d6bb7b2db7f65902b454945fa8fd65a6327047b5277fb",
+    "created_at": "2025-07-09T01:32:10.388910",
+    "last_login": "2025-07-09T01:32:25.975133",
+    "is_active": true
   }
 }

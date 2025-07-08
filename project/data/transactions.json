@@ -34,5 +34,41 @@
     "status": "completed",
     "reference_number": "TXN668647",
     "fee": 0.0
+  },
+  "a09b5049-fa9c-44d0-aa51-b957eb9a1067": {
+    "transaction_id": "a09b5049-fa9c-44d0-aa51-b957eb9a1067",
+    "account_id": "f504fb42-2b8d-4cd9-af0b-bc92ebea22a0",
+    "transaction_type": "deposit",
+    "amount": 5000.0,
+    "description": "Initial deposit",
+    "target_account_id": null,
+    "created_at": "2025-07-09T01:21:32.465259",
+    "status": "completed",
+    "reference_number": "TXN147064",
+    "fee": 0.0
+  },
+  "8d8821cf-5d8c-432b-96db-937eb5aa4cbb": {
+    "transaction_id": "8d8821cf-5d8c-432b-96db-937eb5aa4cbb",
+    "account_id": "f504fb42-2b8d-4cd9-af0b-bc92ebea22a0",
+    "transaction_type": "deposit",
+    "amount": 300.0,
+    "description": "sobia@gmail.com",
+    "target_account_id": null,
+    "created_at": "2025-07-09T01:24:41.804016",
+    "status": "completed",
+    "reference_number": "TXN597880",
+    "fee": 0.0
+  },
+  "fcf169ad-33c4-4d35-823d-ddef81702be7": {
+    "transaction_id": "fcf169ad-33c4-4d35-823d-ddef81702be7",
+    "account_id": "f504fb42-2b8d-4cd9-af0b-bc92ebea22a0",
+    "transaction_type": "withdrawal",
+    "amount": 300.0,
+    "description": "hi",
+    "target_account_id": null,
+    "created_at": "2025-07-09T01:25:26.603985",
+    "status": "completed",
+    "reference_number": "TXN775987",
+    "fee": 0.0
   }
 }
