@@ -73,7 +73,7 @@
     "role": "admin",
     "password_hash": "41e5653fc7aeb894026d6bb7b2db7f65902b454945fa8fd65a6327047b5277fb",
     "created_at": "2025-07-09T01:32:10.388910",
-    "last_login": "2025-07-11T13:19:35.785242",
+    "last_login": "2025-07-10T12:35:03.889752",
     "is_active": true
   },
   "81cb4c64-b1ea-457c-b929-25b91646c3d7": {
@@ -96,39 +96,6 @@
     "password_hash": "35107fff641d6d8c7aabc8d0782e7cc190269ebcbc0c99e3d66da5f2b54770bf",
     "created_at": "2025-07-10T00:37:46.383242",
     "last_login": "2025-07-10T00:38:02.749091",
-    "is_active": true
-  },
-  "ef1daaff-3f49-46b8-b795-cd0913c91604": {
-    "user_id": "ef1daaff-3f49-46b8-b795-cd0913c91604",
-    "username": "hania",
-    "email": "hania@gmail.com",
-    "phone": "031248855959",
-    "role": "customer",
-    "password_hash": "1d49f4a8bc233d229a882d5b4e631f5059e2d6ce1353f1faedb25d59e093f8c3",
-    "created_at": "2025-07-10T12:40:18.887750",
-    "last_login": "2025-07-10T12:48:03.827157",
-    "is_active": true
-  },
-  "97e87a17-9723-47a1-88e3-2c9e62c57eb2": {
-    "user_id": "97e87a17-9723-47a1-88e3-2c9e62c57eb2",
-    "username": "kajal",
-    "email": "kajal@gmail.com",
-    "phone": "031278999669",
-    "role": "customer",
-    "password_hash": "3f45dd39757b885a6688910f4960157a533a959023f3bede56df699b5799b333",
-    "created_at": "2025-07-10T12:46:16.967018",
-    "last_login": "2025-07-11T12:11:09.920112",
-    "is_active": true
-  },
-  "3320ac99-2823-4445-881c-1dd725a4539a": {
-    "user_id": "3320ac99-2823-4445-881c-1dd725a4539a",
-    "username": "miss",
-    "email": "miss@gmail.com",
-    "phone": "031256678",
-    "role": "customer",
-    "password_hash": "1d7a044a2f97aee5fab456f8870c40eb178973fb9a0c055269ac83c7d7fba7d0",
-    "created_at": "2025-07-10T14:43:42.879984",
-    "last_login": "2025-07-10T14:43:56.891716",
     "is_active": true
   }
 }

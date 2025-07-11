@@ -63,11 +63,11 @@ class Analytics:
         
         with col2:
             total_volume = df['amount'].sum()
-            st.metric("Total Volume", f"₹{total_volume:,.2f}")
+            st.metric("Total Volume", f"{total_volume:,.2f}")
         
         with col3:
             avg_transaction = df['amount'].mean()
-            st.metric("Average Transaction", f"₹{avg_transaction:,.2f}")
+            st.metric("Average Transaction", f"{avg_transaction:,.2f}")
         
         with col4:
             daily_avg = total_transactions / days
@@ -158,8 +158,8 @@ class Analytics:
                     'Account Number': account.account_number,
                     'Account Type': account.account_type.title(),
                     'Transaction Count': row['transaction_count'],
-                    'Total Volume': f"₹{row['total_amount']:,.2f}",
-                    'Current Balance': f"₹{account.balance:,.2f}"
+                    'Total Volume': f"{row['total_amount']:,.2f}",
+                    'Current Balance': f"{account.balance:,.2f}"
                 })
         
         if account_details:
@@ -173,15 +173,15 @@ class Analytics:
         # Define amount ranges
         def categorize_amount(amount):
             if amount < 1000:
-                return "< ₹1,000"
+                return "< 1,000"
             elif amount < 10000:
-                return "₹1,000 - ₹10,000"
+                return "1,000 - 10,000"
             elif amount < 50000:
-                return "₹10,000 - ₹50,000"
+                return "10,000 - 50,000"
             elif amount < 100000:
-                return "₹50,000 - ₹1,00,000"
+                return "50,000 - 1,00,000"
             else:
-                return "> ₹1,00,000"
+                return "> 1,00,000"
         
         df['amount_category'] = df['amount'].apply(categorize_amount)
         
@@ -232,15 +232,15 @@ class Analytics:
         
         with col1:
             st.write("**Transaction Amount Statistics:**")
-            st.write(f"Minimum: ₹{df['amount'].min():,.2f}")
-            st.write(f"Maximum: ₹{df['amount'].max():,.2f}")
-            st.write(f"Mean: ₹{df['amount'].mean():,.2f}")
-            st.write(f"Median: ₹{df['amount'].median():,.2f}")
-            st.write(f"Standard Deviation: ₹{df['amount'].std():,.2f}")
+            st.write(f"Minimum: {df['amount'].min():,.2f}")
+            st.write(f"Maximum: {df['amount'].max():,.2f}")
+            st.write(f"Mean: {df['amount'].mean():,.2f}")
+            st.write(f"Median: {df['amount'].median():,.2f}")
+            st.write(f"Standard Deviation: {df['amount'].std():,.2f}")
         
         with col2:
             st.write("**Transaction Type Summary:**")
             for tx_type in df['type'].unique():
                 count = len(df[df['type'] == tx_type])
                 volume = df[df['type'] == tx_type]['amount'].sum()
-                st.write(f"{tx_type.title()}: {count} transactions, ₹{volume:,.2f}")
+                st.write(f"{tx_type.title()}: {count} transactions, {volume:,.2f}")

@@ -62,7 +62,7 @@ class AdminPanel:
             st.metric("Total Accounts", stats['total_accounts'])
         
         with col3:
-            st.metric("Total Balance", f"₹{stats['total_balance']:,.2f}")
+            st.metric("Total Balance", f"{stats['total_balance']:,.2f}")
         
         with col4:
             st.metric("Total Transactions", stats['total_transactions'])
@@ -73,13 +73,13 @@ class AdminPanel:
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            st.metric("Total Deposits", f"₹{transaction_summary['total_deposits']:,.2f}")
+            st.metric("Total Deposits", f"{transaction_summary['total_deposits']:,.2f}")
         
         with col2:
-            st.metric("Total Withdrawals", f"₹{transaction_summary['total_withdrawals']:,.2f}")
+            st.metric("Total Withdrawals", f"{transaction_summary['total_withdrawals']:,.2f}")
         
         with col3:
-            st.metric("Total Transfers", f"₹{transaction_summary['total_transfers']:,.2f}")
+            st.metric("Total Transfers", f"{transaction_summary['total_transfers']:,.2f}")
         
         # Recent transactions
         st.subheader("Recent Transactions")
@@ -90,7 +90,7 @@ class AdminPanel:
                 {
                     'Date': tx.created_at.strftime('%Y-%m-%d %H:%M'),
                     'Type': tx.transaction_type.value.title(),
-                    'Amount': f"₹{tx.amount:,.2f}",
+                    'Amount': f"{tx.amount:,.2f}",
                     'Status': tx.status.value.title(),
                     'Reference': tx.reference_number
                 }
@@ -159,7 +159,7 @@ class AdminPanel:
                         'Account Number': account.account_number,
                         'Owner': user.username if user else 'Unknown',
                         'Type': account.account_type.title(),
-                        'Balance': f"₹{account.balance:,.2f}",
+                        'Balance': f"{account.balance:,.2f}",
                         'Created': account.created_at.strftime('%Y-%m-%d') if account.created_at else 'N/A',
                         'Status': 'Active' if account.is_active else 'Inactive'
                     })
@@ -177,11 +177,11 @@ class AdminPanel:
             
             with col2:
                 total_balance = sum(a.balance for a in accounts.values() if a.is_active)
-                st.metric("Total Balance", f"₹{total_balance:,.2f}")
+                st.metric("Total Balance", f"{total_balance:,.2f}")
             
             with col3:
                 avg_balance = total_balance / total_accounts if total_accounts > 0 else 0
-                st.metric("Average Balance", f"₹{avg_balance:,.2f}")
+                st.metric("Average Balance", f"{avg_balance:,.2f}")
         else:
             st.info("No accounts found")
     
@@ -234,7 +234,7 @@ class AdminPanel:
                     'User': user.username if user else 'Unknown',
                     'Account': account.account_number if account else 'Unknown',
                     'Type': tx.transaction_type.value.title(),
-                    'Amount': f"₹{tx.amount:,.2f}",
+                    'Amount': f"{tx.amount:,.2f}",
                     'Status': tx.status.value.title(),
                     'Description': tx.description or 'N/A'
                 })
@@ -252,7 +252,7 @@ class AdminPanel:
             
             with col2:
                 total_amount = sum(tx.amount for tx in filtered_transactions if tx.status == TransactionStatus.COMPLETED)
-                st.metric("Total Amount", f"₹{total_amount:,.2f}")
+                st.metric("Total Amount", f"{total_amount:,.2f}")
             
             with col3:
                 success_rate = len([tx for tx in filtered_transactions if tx.status == TransactionStatus.COMPLETED]) / len(filtered_transactions) * 100

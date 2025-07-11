@@ -55,7 +55,7 @@ streamlit run app.py
 
 ## Default Login Credentials
 
-- **Admin**: username: `admin`, password: `admin123`
+- **Admin**: username: `final_admin`, password: `admin12345`
 - **Customer**: Register a new account through the login page
 
 ## Project Structure

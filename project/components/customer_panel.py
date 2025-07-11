@@ -62,7 +62,7 @@ class CustomerPanel:
             
             with col2:
                 total_balance = sum(account.balance for account in accounts)
-                st.metric("Total Balance", f"₹{total_balance:,.2f}")
+                st.metric("Total Balance", f"{total_balance:,.2f}")
             
             with col3:
                 # Get recent transactions count
@@ -80,7 +80,7 @@ class CustomerPanel:
                     col1, col2 = st.columns(2)
                     
                     with col1:
-                        st.write(f"**Balance:** ₹{account.balance:,.2f}")
+                        st.write(f"**Balance:** {account.balance:,.2f}")
                         st.write(f"**Account Type:** {account.account_type.title()}")
                     
                     with col2:
@@ -92,7 +92,7 @@ class CustomerPanel:
                     if recent_transactions:
                         st.write("**Recent Transactions:**")
                         for tx in recent_transactions:
-                            st.write(f"- {tx.created_at.strftime('%Y-%m-%d')} | {tx.transaction_type.value.title()} | ₹{tx.amount:,.2f}")
+                            st.write(f"- {tx.created_at.strftime('%Y-%m-%d')} | {tx.transaction_type.value.title()} | {tx.amount:,.2f}")
         else:
             st.info("No accounts found. Contact admin to create an account.")
             
@@ -130,12 +130,12 @@ class CustomerPanel:
             with col1:
                 st.write(f"**Account Number:** {selected_account.account_number}")
                 st.write(f"**Account Type:** {selected_account.account_type.title()}")
-                st.write(f"**Balance:** ₹{selected_account.balance:,.2f}")
+                st.write(f"**Balance:** {selected_account.balance:,.2f}")
             
             with col2:
                 st.write(f"**Created:** {selected_account.created_at.strftime('%Y-%m-%d')}")
                 st.write(f"**Status:** {'Active' if selected_account.is_active else 'Inactive'}")
-                st.write(f"**Daily Limit:** ₹{selected_account.daily_transaction_limit:,.2f}")
+                st.write(f"**Daily Limit:** {selected_account.daily_transaction_limit:,.2f}")
             
             # Transaction history for this account
             st.subheader("Transaction History")
@@ -147,7 +147,7 @@ class CustomerPanel:
                     transaction_data.append({
                         'Date': tx.created_at.strftime('%Y-%m-%d %H:%M'),
                         'Type': tx.transaction_type.value.title(),
-                        'Amount': f"₹{tx.amount:,.2f}",
+                        'Amount': f"{tx.amount:,.2f}",
                         'Status': tx.status.value.title(),
                         'Reference': tx.reference_number,
                         'Description': tx.description or 'N/A'
@@ -196,8 +196,8 @@ class CustomerPanel:
                 
                 if st.form_submit_button("Deposit"):
                     if self.bank_system.deposit(selected_account.account_id, amount, description):
-                        st.success(f"₹{amount:,.2f} deposited successfully!")
-                        st.info(f"New balance: ₹{selected_account.balance:,.2f}")
+                        st.success(f"{amount:,.2f} deposited successfully!")
+                        st.info(f"New balance: {selected_account.balance:,.2f}")
                     else:
                         st.error("Deposit failed. Please try again.")
         else:
@@ -212,7 +212,7 @@ class CustomerPanel:
         if accounts:
             with st.form("withdraw_form"):
                 # Account selection
-                account_options = {f"{acc.account_number} ({acc.account_type.title()}) - ₹{acc.balance:,.2f}": acc for acc in accounts}
+                account_options = {f"{acc.account_number} ({acc.account_type.title()}) - {acc.balance:,.2f}": acc for acc in accounts}
                 selected_account_key = st.selectbox("Select Account", list(account_options.keys()))
                 selected_account = account_options[selected_account_key]
                 
@@ -221,14 +221,14 @@ class CustomerPanel:
                 amount = st.number_input("Withdraw Amount", min_value=1.0, max_value=max_amount, value=min(100.0, max_amount))
                 description = st.text_input("Description (Optional)", placeholder="Enter description")
                 
-                st.info(f"Available balance: ₹{selected_account.balance:,.2f}")
+                st.info(f"Available balance: {selected_account.balance:,.2f}")
                 
                 if st.form_submit_button("Withdraw"):
                     if amount > selected_account.balance:
                         st.error("Insufficient balance!")
                     elif self.bank_system.withdraw(selected_account.account_id, amount, description):
-                        st.success(f"₹{amount:,.2f} withdrawn successfully!")
-                        st.info(f"New balance: ₹{selected_account.balance:,.2f}")
+                        st.success(f"{amount:,.2f} withdrawn successfully!")
+                        st.info(f"New balance: {selected_account.balance:,.2f}")
                     else:
                         st.error("Withdrawal failed. Please try again.")
         else:
@@ -243,7 +243,7 @@ class CustomerPanel:
         if accounts:
             with st.form("transfer_form"):
                 # Source account selection
-                account_options = {f"{acc.account_number} ({acc.account_type.title()}) - ₹{acc.balance:,.2f}": acc for acc in accounts}
+                account_options = {f"{acc.account_number} ({acc.account_type.title()}) - {acc.balance:,.2f}": acc for acc in accounts}
                 selected_account_key = st.selectbox("From Account", list(account_options.keys()))
                 selected_account = account_options[selected_account_key]
                 
@@ -253,7 +253,7 @@ class CustomerPanel:
                 amount = st.number_input("Transfer Amount", min_value=1.0, max_value=max_amount, value=min(100.0, max_amount))
                 description = st.text_input("Description (Optional)", placeholder="Enter description")
                 
-                st.info(f"Available balance: ₹{selected_account.balance:,.2f}")
+                st.info(f"Available balance: {selected_account.balance:,.2f}")
                 
                 if st.form_submit_button("Transfer"):
                     if amount > selected_account.balance:
@@ -268,8 +268,8 @@ class CustomerPanel:
                         if not target_account:
                             st.error("Target account not found!")
                         elif self.bank_system.transfer(selected_account.account_id, target_account_number, amount, description):
-                            st.success(f"₹{amount:,.2f} transferred successfully to {target_account_number}!")
-                            st.info(f"New balance: ₹{selected_account.balance:,.2f}")
+                            st.success(f"{amount:,.2f} transferred successfully to {target_account_number}!")
+                            st.info(f"New balance: {selected_account.balance:,.2f}")
                         else:
                             st.error("Transfer failed. Please try again.")
         else:
@@ -332,7 +332,7 @@ class CustomerPanel:
                         'Date': tx.created_at.strftime('%Y-%m-%d %H:%M'),
                         'Account': account.account_number if account else 'Unknown',
                         'Type': tx.transaction_type.value.title(),
-                        'Amount': f"₹{tx.amount:,.2f}",
+                        'Amount': f"{tx.amount:,.2f}",
                         'Status': tx.status.value.title(),
                         'Reference': tx.reference_number,
                         'Description': tx.description or 'N/A'
@@ -351,11 +351,11 @@ class CustomerPanel:
                 
                 with col2:
                     total_deposits = sum(tx.amount for tx in filtered_transactions if tx.transaction_type == TransactionType.DEPOSIT)
-                    st.metric("Total Deposits", f"₹{total_deposits:,.2f}")
+                    st.metric("Total Deposits", f"{total_deposits:,.2f}")
                 
                 with col3:
                     total_withdrawals = sum(tx.amount for tx in filtered_transactions if tx.transaction_type == TransactionType.WITHDRAWAL)
-                    st.metric("Total Withdrawals", f"₹{total_withdrawals:,.2f}")
+                    st.metric("Total Withdrawals", f"{total_withdrawals:,.2f}")
                 
                 # Transaction chart
                 if len(filtered_transactions) > 1:
